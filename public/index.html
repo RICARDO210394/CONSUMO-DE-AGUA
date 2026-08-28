@@ -184,7 +184,7 @@
      that area — a plain document-level scroll can't make a sticky thead stick when
      it sits inside .table-wrap's overflow-x:auto box, so the grid gets a real,
      height-capped scrollport instead (height set from JS, see updateRegistroGridHeight). */
-  #registro-head{
+  #registro-head, #piazza-head{
     position:sticky; top:0; z-index:6;
     background:var(--paper);
     padding-top:6px; margin:-6px 0 20px;
@@ -1389,7 +1389,7 @@ function renderPiazza(piazza){
   var rangeLabel = macroBuckets.length ? (macroBuckets[0].label + ' – ' + macroBuckets[macroBuckets.length-1].label) : '';
 
   main.innerHTML =
-    '<div class="page-head">' +
+    '<div class="page-head" id="piazza-head">' +
       '<div><h1>' + escapeHtml(piazza) + '</h1><p class="page-sub">' + records.length + ' registro' + (records.length!==1?'s':'') + ' · vista por ' + PERIOD_LABELS[ui.period].toLowerCase() + '</p></div>' +
       '<div class="head-actions">' +
         '<div class="period-toggle" id="period-toggle">' +
